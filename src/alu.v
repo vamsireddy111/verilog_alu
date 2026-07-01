@@ -8,15 +8,12 @@ module alu (
 wire [3:0] sum;
 wire [3:0] and_out, or_out, xor_out;
 
-// Arithmetic
 assign {Cout, sum} = A + B;
 
-// Logic
 assign and_out = A & B;
 assign or_out  = A | B;
 assign xor_out = A ^ B;
 
-// MUX
 always @(*) begin
     case (Sel)
         2'b00: Result = and_out;
